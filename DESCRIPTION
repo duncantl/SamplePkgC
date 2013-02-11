@@ -1,0 +1,7 @@
+Package: Fib
+Title: Yeah
+Description: more
+Version: 0.1-0
+License: BSD
+Author: DTD
+Maintainer: DTL <duncan@foo.org>
