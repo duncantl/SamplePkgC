@@ -60,5 +60,6 @@ R_call_sumElements(SEXP x)
     SET_NAMES(ans, names);
     UNPROTECT(2);
     return(ans);
+// a change
 //    return(ScalarReal(total));
 }
