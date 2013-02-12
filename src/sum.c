@@ -50,13 +50,14 @@ R_call_sumElements(SEXP x)
     double *realValues = REAL(tmp);
 
 
-    SEXP ans = ScalarReal(total);
+    SEXP ans = ScalarReal(total); // a numeric vector of length 1.
+
+      /* Just an example of protecting from garbage collection.  We'll put a names
+          vector on the numeric() vector of length 1. */
     PROTECT(ans);
-    SEXP names = NEW_CHARACTER(n);
+    SEXP names = NEW_CHARACTER(1);
     PROTECT(names);
-    for(i = 0; i < n; i++) {
-	SET_STRING_ELT(names, i, makeName(i));
-    }
+    SET_STRING_ELT(names, 0, mkChar("total value"));
     SET_NAMES(ans, names);
     UNPROTECT(2);
     return(ans);
